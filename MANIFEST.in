@@ -1,0 +1,12 @@
+include README.md
+include CHANGELOG.md
+include .gitignore
+global-include requirements.txt
+graft atbcaptcha/font
+graft docs
+graft notes
+graft tests
+graft */conf
+graft */log
+global-exclude .DS_Store
+global-exclude __pycache__

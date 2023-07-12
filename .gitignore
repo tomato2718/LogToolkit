@@ -1,0 +1,13 @@
+### OS generated files ###
+**/.DS_Store
+**/.vscode
+
+### Python things ###
+# System
+**/__pycache__
+**/pytest_cache
+
+
+# Packaging
+*venv*/
+*.egg-info
