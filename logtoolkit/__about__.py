@@ -12,8 +12,8 @@ __all__ = [
     '__usage__'
 ]
 
-__project__ = 'template'
-__version__ = '0.0.0'
+__project__ = 'LogToolkit'
+__version__ = '0.1.0'
 __author__ = 'yveschen2718@gmail.com'
 __maintainer__ = 'yveschen2718@gmail.com'
 __release__ = '2023/07/09'
