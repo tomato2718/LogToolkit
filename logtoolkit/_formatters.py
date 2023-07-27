@@ -11,7 +11,6 @@ from typing import Any, Mapping
 from logging import (
     Formatter,
     LogRecord,
-    _nameToLevel,
 )
 
 from ._constants import (
@@ -42,7 +41,7 @@ class ColorfulFormatter(Formatter):
         >>> handler = StreamHandler()
         >>> handler.setFormatter(cfmt)
     '''
-    _colors: defaultdict[int, str] = defaultdict(str)
+    _format: defaultdict[str, str] = defaultdict(lambda: '{record}')
     def __init__(self,
                  colors: dict[LogLevel, ColorName],
                  fmt: str | None = None,
@@ -80,13 +79,9 @@ class ColorfulFormatter(Formatter):
         :param Mapping[str, Any] defaults: Assign extra parameter to `fmt`.
         '''
         for level, color in colors.items():
-            levelno = _nameToLevel[level]
             if hasattr(Color, color):
-                self._colors[levelno] = getattr(Color, color)
-            else:
-                self._colors[levelno] = ''
-            
+                self._format[level] = getattr(Color, color) + '{record}' + Color.RESET
         super().__init__(fmt, datefmt, style, validate, defaults=defaults)
 
     def format(self, record: LogRecord) -> str:
-        return self._colors[record.levelno] + super().format(record) + Color.RESET
+        return self._format[record.levelname].format(record=super().format(record))
