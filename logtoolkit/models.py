@@ -95,7 +95,7 @@ class Handlers:
         return handler
 
     @staticmethod
-    def stdout(*, formatter: Formatter) -> StreamHandler:
+    def stdout(formatter: Formatter) -> StreamHandler:
         '''
         Create a StreamHandler for stdout.
 
@@ -111,7 +111,7 @@ class Handlers:
         return handler
     
     @staticmethod
-    def stderr(*, formatter: Formatter) -> StreamHandler:
+    def stderr(formatter: Formatter) -> StreamHandler:
         '''
         Create a StreamHandler for stderr.
 
