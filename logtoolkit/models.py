@@ -1,5 +1,5 @@
 '''
-Not for import.
+This module contains Configured models of Formatters and Handlers.
 '''
 __all__ = [
     'Formatters',
