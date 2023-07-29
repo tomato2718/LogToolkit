@@ -48,9 +48,11 @@ def quickConfig(name: str,
     ``CLEAN``:
         Format your log as ``[INFO    1900-01-01 00:00:00]: foo``.
     ``XML``:
-        Format your log as``1900-01-01T00:00:00:INFO: foo``.
+        Format your log as ``1900-01-01T00:00:00:INFO: foo``.
     ``COLOR``:
-        Same as ``CLEAN``, but colored.
+        Same as ``CLEAN``, but colored. Only use for console output.
+
+        Will switch to ``CLEAN`` formatter automatically when using FileHandlers.
 
     About handlers:
 
