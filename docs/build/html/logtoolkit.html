@@ -1,0 +1,612 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="logtoolkit" href="modules.html" />
+
+    <!-- Generated with Sphinx 6.1.3 and Furo 2023.05.20 -->
+        <title>logtoolkit package - LogToolkit 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">LogToolkit 1.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">LogToolkit 1.0.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">logtoolkit</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of logtoolkit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">logtoolkit package</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="logtoolkit-package">
+<h1>logtoolkit package<a class="headerlink" href="#logtoolkit-package" title="Permalink to this heading">#</a></h1>
+<section id="module-logtoolkit">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-logtoolkit" title="Permalink to this heading">#</a></h2>
+<p>A toolkit let you set up logging easier.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="logtoolkit.ColorfulFormatter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">logtoolkit.</span></span><span class="sig-name descname"><span class="pre">ColorfulFormatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'DEBUG'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'INFO'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'WARNING'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'ERROR'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'CRITICAL'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'BLACK'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'RED'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'GREEN'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'YELLOW'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'BLUE'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'MAGENTA'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'CYAN'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'WHITE'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'BRIGHT_BLACK'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'BRIGHT_RED'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'BRIGHT_GREEN'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'BRIGHT_YELLOW'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'BRIGHT_BLUE'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'BRIGHT_MAGENTA'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'BRIGHT_CYAN'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'BRIGHT_WHITE'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datefmt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'%'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'{'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'$'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'%'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">defaults</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#logtoolkit.ColorfulFormatter" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Formatter</span></code></p>
+<p>Custom formatter to color your logger.</p>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cfmt</span> <span class="o">=</span> <span class="n">ColorfulFormatter</span><span class="p">(</span>
+<span class="go">        colors={</span>
+<span class="go">            &#39;DEBUG&#39;: &#39;CYAN&#39;,</span>
+<span class="go">            &#39;WARNING&#39;: &#39;YELLOW&#39;,</span>
+<span class="go">            &#39;ERROR&#39;: &#39;RED&#39;,</span>
+<span class="go">            &#39;CRITICAL&#39;: &#39;BRIGHT_RED&#39;</span>
+<span class="go">        },</span>
+<span class="go">        fmt=&#39;[%(levelname)-5s %(asctime)s]: %(message)s&#39;,</span>
+<span class="go">        datefmt=&#39;%Y-%m-%d %H:%M:%S&#39;,</span>
+<span class="go">    )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">handler</span> <span class="o">=</span> <span class="n">StreamHandler</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">cfmt</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Constructor method.</p>
+<p>The colors parameter SHOULD be as follow:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;DEBUG&#39;</span><span class="p">:</span> <span class="s1">&#39;CYAN&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;WARNING&#39;</span><span class="p">:</span> <span class="s1">&#39;YELLOW&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ERROR&#39;</span><span class="p">:</span> <span class="s1">&#39;RED&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CRITICAL&#39;</span><span class="p">:</span> <span class="s1">&#39;BRIGHT_RED&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>The key of colors MUST be log level in capitalize string, basically:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>, <code class="docutils literal notranslate"><span class="pre">INFO</span></code>, <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>, <code class="docutils literal notranslate"><span class="pre">ERROR</span></code>, <code class="docutils literal notranslate"><span class="pre">CRITICAL</span></code></p>
+</dd>
+</dl>
+<p>The value of colors MUST be one of the color, see <cite>logtoolkit.types.ColorName</cite>.</p>
+<dl class="simple">
+<dt>About other parameters:</dt><dd><p>See <cite>logging.Formatter</cite> documentation for more information.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>colors</strong> (<em>dict</em><em>[</em><em>LogLevel</em><em>, </em><em>ColorName</em><em>]</em>) – Key-value pair of the color to use for each level.</p></li>
+<li><p><strong>fmt</strong> (<em>str</em><em>|</em><em>None</em>) – The format to use in formatter.</p></li>
+<li><p><strong>datefmt</strong> (<em>str</em><em>|</em><em>None</em>) – The date format to use in formatter.</p></li>
+<li><p><strong>style</strong> (<em>FormatStyle</em>) – The style parameter use for formatting.</p></li>
+<li><p><strong>validate</strong> (<em>bool</em>) – Valid the input format or not.</p></li>
+<li><p><strong>defaults</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – Assign extra parameter to <cite>fmt</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="logtoolkit.ColorfulFormatter.format">
+<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">LogRecord</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#logtoolkit.ColorfulFormatter.format" title="Permalink to this definition">#</a></dt>
+<dd><p>Format the specified record as text.</p>
+<p>The record’s attribute dictionary is used as the operand to a
+string formatting operation which yields the returned string.
+Before formatting the dictionary, a couple of preparatory steps
+are carried out. The message attribute of the record is computed
+using LogRecord.getMessage(). If the formatting string uses the
+time (as determined by a call to usesTime(), formatTime() is
+called to format the event time. If there is exception information,
+it is formatted using formatException() and appended to the message.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="logtoolkit.getLogger">
+<span class="sig-prename descclassname"><span class="pre">logtoolkit.</span></span><span class="sig-name descname"><span class="pre">getLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Logger</span></span></span><a class="headerlink" href="#logtoolkit.getLogger" title="Permalink to this definition">#</a></dt>
+<dd><p>Wrapper of <cite>logging.getLogger()</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of the logger</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Requested logger.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>logging.Logger</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="logtoolkit.quickConfig">
+<span class="sig-prename descclassname"><span class="pre">logtoolkit.</span></span><span class="sig-name descname"><span class="pre">quickConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'CLEAN'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'XML'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'COLOR'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stream_handler</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'stdout'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'stderr'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_handlers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'log_file'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'error_log'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Logger</span></span></span><a class="headerlink" href="#logtoolkit.quickConfig" title="Permalink to this definition">#</a></dt>
+<dd><p>Configure logger using templates. This function also return the logger with specified name.</p>
+<p>About formatters:</p>
+<p>The <cite>formatter</cite> parameter MUST be one of the <code class="docutils literal notranslate"><span class="pre">FormattersModels</span></code>, see follows:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">CLEAN</span></code>:</dt><dd><p>Format your log as <code class="docutils literal notranslate"><span class="pre">[INFO</span>&#160;&#160;&#160; <span class="pre">1900-01-01</span> <span class="pre">00:00:00]:</span> <span class="pre">foo</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">XML</span></code>:</dt><dd><p>Format your log as <code class="docutils literal notranslate"><span class="pre">1900-01-01T00:00:00:INFO:</span> <span class="pre">foo</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">COLOR</span></code>:</dt><dd><p>Same as <code class="docutils literal notranslate"><span class="pre">CLEAN</span></code>, but colored. Only use for console output.</p>
+<p>Will switch to <code class="docutils literal notranslate"><span class="pre">CLEAN</span></code> formatter automatically when using FileHandlers.</p>
+</dd>
+</dl>
+<p>About handlers:</p>
+<p>The <cite>stream_handler</cite> parameter SHOULD be one of the StreamHandlersModels, Will not create any if not specified.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">stdout</span></code>:</dt><dd><p>Create a StreamHandler with stdout, Loglevel will be set to DEBUG.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">stderr</span></code>:</dt><dd><p>Create a StreamHandler with stderr, Loglevel will be set to ERROR.</p>
+</dd>
+</dl>
+<p>The <cite>file_handlers</cite> parameter SHOULD be one of the <code class="docutils literal notranslate"><span class="pre">FileHandlersModels</span></code>, Also won’t create any if not specified.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">log_file</span></code>:</dt><dd><p>Create a FileHandler for log file, Loglevel will be set to INFO, Create a new log file everyday and keep for 1*30 days.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">error_log</span></code>:</dt><dd><p>Create a FileHandler for error log, Loglevel will be set to INFO, Create a new error log file every 30 days and keep for 30*12 days.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name to use for the logger.</p></li>
+<li><p><strong>formatter</strong> (<em>FormattersModels</em>) – Formatter to use for the logger.</p></li>
+<li><p><strong>stream_handlers</strong> (<em>StreamHandlersModels</em><em>|</em><em>None</em>) – Name of StreamHandler to use for the logger.</p></li>
+<li><p><strong>file_handlers</strong> (<em>dict</em><em>[</em><em>FileHandlersModels</em><em>, </em><em>str</em><em>]</em>) – Name-Path pair of FileHandlers to use for the logger.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Configured logger.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>logging.Logger</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="logtoolkit.yamlConfig">
+<span class="sig-prename descclassname"><span class="pre">logtoolkit.</span></span><span class="sig-name descname"><span class="pre">yamlConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#logtoolkit.yamlConfig" title="Permalink to this definition">#</a></dt>
+<dd><p>Read and configure logging from a YAML file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – Path of the YAML file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="module-logtoolkit.models">
+<span id="logtoolkit-models-module"></span><h2>logtoolkit.models module<a class="headerlink" href="#module-logtoolkit.models" title="Permalink to this heading">#</a></h2>
+<p>This module contains Configured models of Formatters and Handlers.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="logtoolkit.models.Formatters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">logtoolkit.models.</span></span><span class="sig-name descname"><span class="pre">Formatters</span></span><a class="headerlink" href="#logtoolkit.models.Formatters" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Some configured instance of <cite>logging.Formatter</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>CLEAN</strong> (<em>Formatter</em>) – Format your log as follow: <code class="docutils literal notranslate"><span class="pre">[INFO</span>&#160;&#160;&#160; <span class="pre">1900-01-01</span> <span class="pre">00:00:00]:</span> <span class="pre">foo</span></code>.</p></li>
+<li><p><strong>XML</strong> (<em>Formatter</em>) – Format your log as follow: <code class="docutils literal notranslate"><span class="pre">1900-01-01T00:00:00:INFO:</span> <span class="pre">foo</span></code>.</p></li>
+<li><p><strong>COLOR</strong> (<a class="reference internal" href="#logtoolkit.ColorfulFormatter" title="logtoolkit.ColorfulFormatter"><em>ColorfulFormatter</em></a>) – Same as <code class="docutils literal notranslate"><span class="pre">CLEAN</span></code>, but colored.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logtoolkit.models.Formatters.CLEAN">
+<span class="sig-name descname"><span class="pre">CLEAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;logging.Formatter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#logtoolkit.models.Formatters.CLEAN" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logtoolkit.models.Formatters.COLOR">
+<span class="sig-name descname"><span class="pre">COLOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;logtoolkit._formatters.ColorfulFormatter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#logtoolkit.models.Formatters.COLOR" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="logtoolkit.models.Formatters.XML">
+<span class="sig-name descname"><span class="pre">XML</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;logging.Formatter</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#logtoolkit.models.Formatters.XML" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="logtoolkit.models.Handlers">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">logtoolkit.models.</span></span><span class="sig-name descname"><span class="pre">Handlers</span></span><a class="headerlink" href="#logtoolkit.models.Handlers" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class contains configured instance of <cite>logging.handlers.*</cite>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="logtoolkit.models.Handlers.error_log">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">error_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Formatter</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TimedRotatingFileHandler</span></span></span><a class="headerlink" href="#logtoolkit.models.Handlers.error_log" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a FileHandler for error log.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – The path to output error log.</p></li>
+<li><p><strong>formatter</strong> (<em>Formatter</em>) – The formatter to use for handler.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Configured instance of FileHandler.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>TimedRotatingFileHandler</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logtoolkit.models.Handlers.log_file">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">log_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Formatter</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TimedRotatingFileHandler</span></span></span><a class="headerlink" href="#logtoolkit.models.Handlers.log_file" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a FileHandler for log file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – The path to output log file.</p></li>
+<li><p><strong>formatter</strong> (<em>Formatter</em>) – The formatter to use for handler.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Configured instance of FileHandler.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>TimedRotatingFileHandler</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logtoolkit.models.Handlers.stderr">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stderr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Formatter</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">StreamHandler</span></span></span><a class="headerlink" href="#logtoolkit.models.Handlers.stderr" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a StreamHandler for stderr.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>formatter</strong> (<em>Formatter</em>) – The formatter to use for handler.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Configured instance of StreamHandler.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">StreamHandler</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="logtoolkit.models.Handlers.stdout">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stdout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Formatter</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">StreamHandler</span></span></span><a class="headerlink" href="#logtoolkit.models.Handlers.stdout" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a StreamHandler for stdout.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>formatter</strong> (<em>Formatter</em>) – The formatter to use for handler.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Configured instance of StreamHandler.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">StreamHandler</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-logtoolkit.types">
+<span id="logtoolkit-types-module"></span><h2>logtoolkit.types module<a class="headerlink" href="#module-logtoolkit.types" title="Permalink to this heading">#</a></h2>
+<p>Specific types used in logtoolkit module.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="logtoolkit.types.FormatStyle">
+<span class="sig-prename descclassname"><span class="pre">logtoolkit.types.</span></span><span class="sig-name descname"><span class="pre">FormatStyle</span></span><a class="headerlink" href="#logtoolkit.types.FormatStyle" title="Permalink to this definition">#</a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘%’, ‘{’, ‘$’]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="logtoolkit.types.LogLevel">
+<span class="sig-prename descclassname"><span class="pre">logtoolkit.types.</span></span><span class="sig-name descname"><span class="pre">LogLevel</span></span><a class="headerlink" href="#logtoolkit.types.LogLevel" title="Permalink to this definition">#</a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘DEBUG’, ‘INFO’, ‘WARNING’, ‘ERROR’, ‘CRITICAL’]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="logtoolkit.types.FormattersModels">
+<span class="sig-prename descclassname"><span class="pre">logtoolkit.types.</span></span><span class="sig-name descname"><span class="pre">FormattersModels</span></span><a class="headerlink" href="#logtoolkit.types.FormattersModels" title="Permalink to this definition">#</a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘CLEAN’, ‘XML’, ‘COLOR’]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="logtoolkit.types.StreamHandlersModels">
+<span class="sig-prename descclassname"><span class="pre">logtoolkit.types.</span></span><span class="sig-name descname"><span class="pre">StreamHandlersModels</span></span><a class="headerlink" href="#logtoolkit.types.StreamHandlersModels" title="Permalink to this definition">#</a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘stdout’, ‘stderr’]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="logtoolkit.types.FileHandlersModels">
+<span class="sig-prename descclassname"><span class="pre">logtoolkit.types.</span></span><span class="sig-name descname"><span class="pre">FileHandlersModels</span></span><a class="headerlink" href="#logtoolkit.types.FileHandlersModels" title="Permalink to this definition">#</a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘log_file’, ‘error_log’]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="logtoolkit.types.ColorName">
+<span class="sig-prename descclassname"><span class="pre">logtoolkit.types.</span></span><span class="sig-name descname"><span class="pre">ColorName</span></span><a class="headerlink" href="#logtoolkit.types.ColorName" title="Permalink to this definition">#</a></dt>
+<dd><p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘BLACK’, ‘RED’, ‘GREEN’, ‘YELLOW’, ‘BLUE’, ‘MAGENTA’, ‘CYAN’, ‘WHITE’, ‘BRIGHT_BLACK’, ‘BRIGHT_RED’, ‘BRIGHT_GREEN’, ‘BRIGHT_YELLOW’, ‘BRIGHT_BLUE’, ‘BRIGHT_MAGENTA’, ‘BRIGHT_CYAN’, ‘BRIGHT_WHITE’]</p>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="modules.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">logtoolkit</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, tomato2718
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">logtoolkit package</a><ul>
+<li><a class="reference internal" href="#module-logtoolkit">Module contents</a><ul>
+<li><a class="reference internal" href="#logtoolkit.ColorfulFormatter"><code class="docutils literal notranslate"><span class="pre">ColorfulFormatter</span></code></a><ul>
+<li><a class="reference internal" href="#logtoolkit.ColorfulFormatter.format"><code class="docutils literal notranslate"><span class="pre">ColorfulFormatter.format()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#logtoolkit.getLogger"><code class="docutils literal notranslate"><span class="pre">getLogger()</span></code></a></li>
+<li><a class="reference internal" href="#logtoolkit.quickConfig"><code class="docutils literal notranslate"><span class="pre">quickConfig()</span></code></a></li>
+<li><a class="reference internal" href="#logtoolkit.yamlConfig"><code class="docutils literal notranslate"><span class="pre">yamlConfig()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-logtoolkit.models">logtoolkit.models module</a><ul>
+<li><a class="reference internal" href="#logtoolkit.models.Formatters"><code class="docutils literal notranslate"><span class="pre">Formatters</span></code></a><ul>
+<li><a class="reference internal" href="#logtoolkit.models.Formatters.CLEAN"><code class="docutils literal notranslate"><span class="pre">Formatters.CLEAN</span></code></a></li>
+<li><a class="reference internal" href="#logtoolkit.models.Formatters.COLOR"><code class="docutils literal notranslate"><span class="pre">Formatters.COLOR</span></code></a></li>
+<li><a class="reference internal" href="#logtoolkit.models.Formatters.XML"><code class="docutils literal notranslate"><span class="pre">Formatters.XML</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#logtoolkit.models.Handlers"><code class="docutils literal notranslate"><span class="pre">Handlers</span></code></a><ul>
+<li><a class="reference internal" href="#logtoolkit.models.Handlers.error_log"><code class="docutils literal notranslate"><span class="pre">Handlers.error_log()</span></code></a></li>
+<li><a class="reference internal" href="#logtoolkit.models.Handlers.log_file"><code class="docutils literal notranslate"><span class="pre">Handlers.log_file()</span></code></a></li>
+<li><a class="reference internal" href="#logtoolkit.models.Handlers.stderr"><code class="docutils literal notranslate"><span class="pre">Handlers.stderr()</span></code></a></li>
+<li><a class="reference internal" href="#logtoolkit.models.Handlers.stdout"><code class="docutils literal notranslate"><span class="pre">Handlers.stdout()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-logtoolkit.types">logtoolkit.types module</a><ul>
+<li><a class="reference internal" href="#logtoolkit.types.FormatStyle"><code class="docutils literal notranslate"><span class="pre">FormatStyle</span></code></a></li>
+<li><a class="reference internal" href="#logtoolkit.types.LogLevel"><code class="docutils literal notranslate"><span class="pre">LogLevel</span></code></a></li>
+<li><a class="reference internal" href="#logtoolkit.types.FormattersModels"><code class="docutils literal notranslate"><span class="pre">FormattersModels</span></code></a></li>
+<li><a class="reference internal" href="#logtoolkit.types.StreamHandlersModels"><code class="docutils literal notranslate"><span class="pre">StreamHandlersModels</span></code></a></li>
+<li><a class="reference internal" href="#logtoolkit.types.FileHandlersModels"><code class="docutils literal notranslate"><span class="pre">FileHandlersModels</span></code></a></li>
+<li><a class="reference internal" href="#logtoolkit.types.ColorName"><code class="docutils literal notranslate"><span class="pre">ColorName</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true, theme:'neutral'});</script>
+    </body>
+</html>

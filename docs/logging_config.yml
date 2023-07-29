@@ -1,0 +1,39 @@
+version: 1
+
+formatters:
+  standard:
+    class: logging.Formatter
+    format: '[%(levelname)-5s %(asctime)s]: %(message)s'
+    datefmt: '%Y-%m-%d %H:%M:%S'
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: standard
+    level: DEBUG
+    stream: ext://sys.stdout
+  logfile:
+    class: logging.handlers.RotatingFileHandler
+    formatter: standard
+    level: INFO
+    filename: ./output.log
+    mode: a
+    encoding: utf-8
+  errlog:
+    class: logging.handlers.RotatingFileHandler
+    formatter: standard
+    level: ERROR
+    filename: ./error.log
+    mode: a
+    encoding: utf-8
+
+loggers:
+  __main__:
+    level: INFO
+    propagate: False
+    handlers:
+      - console
+      - logfile
+      - errlog
+
+
