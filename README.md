@@ -1,48 +1,101 @@
-# Template
+# LogToolkit
 ## Summary
+A toolkit let you set up logging easier.
+
+![example]
 
 ## Requirements
 ### System
 - `python >= 3.10.10`
 
 ### Python
+- `PyYAML >= 6.0`
 
 
 ## Setup
 ### Installation
 - Install with Python pip
 ```sh
->>> pip install 
-```
-
-- Build Docker Image
-```sh
->>> mkdir tmp
->>> pip install -t tmp
->>> docker build -t 
+>>> pip install logtoolkit-1.0.0-py3-none-any.whl
 ```
 
 ## Usage
 ### Start Up
 - Import this Project as a module.
+
 ```py
+from logtoolkit import (
+    types,
+    models,
+    quickConfig,
+    getLogger,
+    yamlConfig,
+    ColorfulFormatter,
+)
 
+logger = quickConfig(
+    name = __name__,
+    formatter='COLOR',
+    stream_handler='stdout',
+    file_handlers={
+        'log_file': './logtoolkit.log',
+        'error_log': './logtoolkit.error.log'
+    }
+)
+
+logger.info('Hello, World!')
 ```
 
-- Use Python to execute this project.
-```sh
+## Features
+### Configure your logger faster
+```py
+from logtoolkit import (
+    quickConfig,
+    getLogger,
+    yamlConfig,
+)
 
+# Configure by template
+logger = quickConfig(
+    name = __name__,
+    formatter='COLOR',
+    stream_handler='stdout',
+    file_handlers={
+        'log_file': './logtoolkit.log',
+        'error_log': './logtoolkit.error.log'
+    }
+)
+
+# Configure by YAML file
+# See docs/logging_config.yml for the example
+yamlConfig(
+    path='/path/to/config/file.yml'
+)
+logger = getLogger(__name__)
 ```
 
-- Use Docker to execute this project.
-```sh
+### Modify from models
+```py
+# The Colorful formatter use for quickConfig
+from logtoolkit import (
+    ColorfulFormatter,
+)
 
+class MyFormatter(ColorfulFormatter):
+    pass
+
+
+# Get the models use for quickConfig
+from logtoolkit.models import (
+    Formatters,
+    Handlers,
+)
+
+fmt = Formatters.CLEAN
+
+handler = Handlers.stdout(fmt)
+handler.do_something()
 ```
-
-### Arguments
-#### Requirement 
-
-#### Optional
 
 ## Run the tests
 - Unit tests
@@ -57,3 +110,5 @@
 - `yveschen2718@gmail.com`
 
 <!--links-->
+
+[example]: ./docs/source/example.png
