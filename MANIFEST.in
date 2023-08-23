@@ -9,4 +9,4 @@ graft tests
 graft */conf
 graft */log
 global-exclude .DS_Store
-global-exclude __pycache__
+global-exclude __pycache__/*
