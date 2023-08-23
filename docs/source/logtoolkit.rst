@@ -13,7 +13,7 @@ Submodules
 ----------
 
 logtoolkit.models module
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: logtoolkit.models
    :members:
@@ -21,7 +21,7 @@ logtoolkit.models module
    :show-inheritance:
 
 logtoolkit.types module
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: logtoolkit.types
    :members:

@@ -80,7 +80,13 @@ class ColorfulFormatter(Formatter):
         '''
         for level, color in colors.items():
             if hasattr(Color, color):
-                self._format[level] = getattr(Color, color) + '{record}' + Color.RESET
+                self._format[level] = ''.join(
+                    [
+                        getattr(Color, color),
+                        '{record}',
+                        Color.RESET,
+                    ]
+                )
         super().__init__(fmt, datefmt, style, validate, defaults=defaults)
 
     def format(self, record: LogRecord) -> str:
