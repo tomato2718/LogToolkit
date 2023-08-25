@@ -16,7 +16,7 @@ A toolkit let you set up logging easier.
 ### Installation
 - Install with Python pip
 ```sh
->>> pip install logtoolkit-1.0.1-py3-none-any.whl
+>>> pip install logtoolkit-1.0.2-py3-none-any.whl
 ```
 
 ## Usage
