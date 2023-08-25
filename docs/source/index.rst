@@ -45,7 +45,7 @@ Installation
 
 .. code-block:: shell
 
-   >>> pip install logtoolkit-1.0.0-py3-none-any.whl
+   >>> pip install logtoolkit-1.0.2-py3-none-any.whl
 
 
 Usage
