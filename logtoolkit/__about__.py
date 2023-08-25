@@ -13,7 +13,7 @@ __all__ = [
 ]
 
 __project__ = 'LogToolkit'
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 __author__ = 'yveschen2718@gmail.com'
 __maintainer__ = 'yveschen2718@gmail.com'
 __release__ = '2023/07/30'
