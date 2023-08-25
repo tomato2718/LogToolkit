@@ -1,5 +1,5 @@
 # Change Log
-## 1.0.1 (2023/08/23)
+## 1.0.2 (2023/08/23)
 ### Bug fixes
 - **Docs:** Fix typo in docstring of `quickConfig`. [@tomato2718]
 
