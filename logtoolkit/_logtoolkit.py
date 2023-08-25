@@ -68,7 +68,7 @@ def quickConfig(name: str,
     ``log_file``:
         Create a FileHandler for log file, Loglevel will be set to INFO, Create a new log file everyday and keep for 1*30 days.
     ``error_log``:
-        Create a FileHandler for error log, Loglevel will be set to INFO, Create a new error log file every 30 days and keep for 30*12 days.
+        Create a FileHandler for error log, Loglevel will be set to ERROR, Create a new error log file every 30 days and keep for 30*12 days.
 
     :param str name: Name to use for the logger.
     :param FormattersModels formatter: Formatter to use for the logger.
